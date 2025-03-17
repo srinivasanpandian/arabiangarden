@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Arabian Garden</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="menu.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">
+                <img src="img/shared image (2).jpeg" alt="Arabian Garden Logo">
+            </div>
+            <button class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="#book" class="book-online">Book Online</a>
+        </nav>
+    </header>
+
+    <main class="menu-page">
+        <section class="menu-hero">
+            <div class="menu-hero-content">
+                <h1>Our Menu</h1>
+                <p>Experience the finest Arabian cuisine</p>
+            </div>
+        </section>
+
+        <section class="menu-categories">
+            <div class="category-tabs">
+                <button class="tab-btn active" data-category="breakfast">Breakfast</button>
+                <button class="tab-btn" data-category="main-course">Main Course</button>
+                <button class="tab-btn" data-category="desserts">Desserts</button>
+                <button class="tab-btn" data-category="beverages">Beverages</button>
+            </div>
+        </section>
+
+        <section class="menu-items" id="menu-container">
+            <div class="menu-section active" id="breakfast">
+                <h2 class="section-title">Breakfast</h2>
+                <div class="menu-grid">
+                    <!-- Menu items will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <div class="menu-section" id="main-course">
+                <h2 class="section-title">Main Course</h2>
+                <div class="menu-grid">
+                    <!-- Menu items will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <div class="menu-section" id="desserts">
+                <h2 class="section-title">Desserts</h2>
+                <div class="menu-grid">
+                    <!-- Menu items will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <div class="menu-section" id="beverages">
+                <h2 class="section-title">Beverages</h2>
+                <div class="menu-grid">
+                    <!-- Menu items will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+    <script src="menu.js"></script>
+</body>
+</html> 
