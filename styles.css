@@ -63,7 +63,7 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border: 4px solid black; /* Dark red border */
+    border: 4px solid black; 
     border-radius: 50%;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
@@ -128,7 +128,7 @@ body {
 .hero {
     height: 100vh;
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-                url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3');
+                url('img/hero.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -210,7 +210,7 @@ body {
     .logo {
         width: 160px;
         height: 160px;
-        top: -25px;
+        top: -2px;
     }
     
     .nav-links {
@@ -223,7 +223,7 @@ body {
     .logo {
         width: 140px;
         height: 140px;
-        top: -20px;
+        top: -2px;
         left: 20px;
     }
 
@@ -271,7 +271,7 @@ body {
     .logo {
         width: 120px;
         height: 120px;
-        top: -15px;
+        top: -2px;
         left: 10px;
     }
 
@@ -726,3 +726,309 @@ body {
         font-size: 14px;
     }
 }
+
+
+.gallery-section {
+
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-bottom: 70px;
+    color: #C5A572;
+    overflow: hidden;
+  }
+
+  .gallery-section h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+
+  .gallery-container {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 20px;
+  }
+
+  .gallery-container::-webkit-scrollbar {
+    height: 8px;
+  }
+  .gallery-container::-webkit-scrollbar-thumb {
+    background-color: #C5A572;
+    border-radius: 4px;
+  }
+
+  .gallery-item img {
+    width: 300px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    flex-shrink: 0;
+  }
+
+  .arrows {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 50px;
+  }
+
+  .arrow {
+    font-size: 2rem;
+    color: #C5A572;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+/* Media Queries */
+@media (max-width: 992px) {
+    .gallery-item {
+      flex: 0 0 33.33%; /* 3 images in tablet */
+    }
+  }
+
+  @media (max-width: 768px) {
+    .gallery-item {
+      flex: 0 0 50%; /* 2 images in small tablet */
+    }
+  }
+
+  @media (max-width: 480px) {
+    .gallery-item {
+      flex: 0 0 100%; /* 1 image in mobile */
+    }
+    .gallery-section{
+        padding-left: 0;
+        padding-right: 0;
+        padding-bottom: 30px;
+    }
+    .gallery-container{
+        gap: 2px;
+    }
+    .gallery-container::-webkit-scrollbar {
+        display: none;
+      }
+  }
+
+  .contact-section {
+    background-color: black;
+    color: #C5A572;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  
+  .contact-section h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+  
+  .contact-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 0 50px;
+  }
+  
+  .contact-info {
+    flex: 1 1 300px;
+  }
+  
+  .contact-info p {
+    margin: 15px 0;
+    font-size: 1.1rem;
+  }
+  
+  .map iframe {
+    margin-top: 20px;
+    border-radius: 10px;
+  }
+  
+  /* ===== MEDIA QUERIES ===== */
+  
+  /* Tablet Devices (up to 992px) */
+  @media (max-width: 992px) {
+    .contact-section {
+      padding-left: 50px;
+      padding-right: 50px;
+    }
+  
+    .contact-container {
+      padding: 0 20px;
+    }
+  }
+  
+  /* Mobile Devices (up to 768px) */
+  @media (max-width: 768px) {
+    .contact-section {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  
+    .contact-section h2 {
+      font-size: 1.5rem;
+    }
+  
+    .contact-container {
+      flex-direction: column;
+      align-items: center;
+      padding: 0 10px;
+    }
+  
+    .contact-info, 
+    .contact-form {
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+    }
+  
+    .map iframe {
+      width: 100%;
+    }
+  }
+  
+  /* Small Mobile Devices (up to 480px) */
+  @media (max-width: 480px) {
+    .contact-section h2 {
+      font-size: 1.3rem;
+    }
+  
+    .contact-info p {
+      font-size: 1rem;
+    }
+  }
+
+  
+  .footer-section {
+    background-color: black;
+    color: #C5A572;
+    padding: 50px 100px 20px 100px;
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+  
+  .footer-logo img {
+    width: 350px;
+    margin-bottom: 15px;
+  }
+  
+  .footer-links ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-links h4, 
+  .footer-contact h4 {
+    margin-bottom: 15px;
+  }
+  
+  .footer-links ul li {
+    margin: 10px 0;
+  }
+  
+  .footer-links ul li a {
+    color: #C5A572;
+    text-decoration: none;
+  }
+  
+  .footer-links ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  .footer-contact p {
+    margin: 10px 0;
+  }
+  
+  .social-icons a img {
+    width: 24px;
+    margin-right: 10px;
+    transition: transform 0.3s;
+  }
+  
+  .social-icons a img:hover {
+    transform: scale(1.1);
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #C5A572;
+    margin-top: 30px;
+    font-size: 0.9rem;
+  }
+  
+
+  /* Large screens - default (above 1200px) */
+/* No changes needed, the default styles work fine */
+
+/* Medium screens (tablets, below 992px) */
+@media (max-width: 992px) {
+    .footer-section {
+      padding: 40px 50px 20px 50px;
+    }
+  
+    .footer-container {
+      gap: 30px;
+    }
+  
+    .footer-logo img {
+      width: 250px;
+    }
+  }
+  
+  /* Small tablets & large phones (below 768px) */
+  @media (max-width: 768px) {
+    .footer-container {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .footer-logo img {
+      width: 200px;
+      margin-bottom: 10px;
+    }
+  
+    .footer-links, .footer-contact {
+      margin-top: 20px;
+    }
+  
+    .social-icons a img {
+      width: 20px;
+      margin: 8px;
+    }
+  }
+  
+  /* Small phones (below 480px) */
+  @media (max-width: 480px) {
+    .footer-section {
+      padding: 30px 20px 15px 20px;
+    }
+  
+    .footer-logo img {
+      width: 180px;
+    }
+  
+    .footer-links ul li {
+      margin: 8px 0;
+    }
+  
+    .footer-contact p {
+      font-size: 0.9rem;
+    }
+  
+    .footer-bottom {
+      font-size: 0.8rem;
+    }
+  }
+  

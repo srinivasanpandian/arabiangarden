@@ -81,3 +81,22 @@ window.addEventListener('scroll', () => {
         }
     });
 });
+
+
+const gallery = document.getElementById("gallery");
+const leftArrow = document.getElementById("left");
+const rightArrow = document.getElementById("right");
+
+leftArrow.addEventListener("click", () => {
+  gallery.scrollBy({
+    left: -320, // Width + gap
+    behavior: "smooth"
+  });
+});
+
+rightArrow.addEventListener("click", () => {
+  gallery.scrollBy({
+    left: 320,
+    behavior: "smooth"
+  });
+});
