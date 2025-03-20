@@ -152,46 +152,59 @@ const menuData = {
 };
 
 // Menu functionality
-document.addEventListener('DOMContentLoaded', () => {
-    const menuGrid = document.getElementById('menuGrid');
-    const categoryTabs = document.querySelectorAll('.category-tab');
-    let currentCategory = 'main-course';
+document.addEventListener('DOMContentLoaded', function() {
+    // Get all tab buttons and menu sections
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const menuSections = document.querySelectorAll('.menu-section');
 
-    // Function to create a menu item card
-    function createMenuItem(item) {
-        return `
-            <div class="menu-item">
-                <img src="${item.image}" alt="${item.title}" class="menu-item-image">
-                <div class="menu-item-content">
-                    <h3 class="menu-item-title">${item.title}</h3>
-                    <p class="menu-item-description">${item.description}</p>
-                    <div class="menu-item-price">${item.price}</div>
-                </div>
-            </div>
-        `;
+    // Function to switch tabs
+    function switchTab(e) {
+        // Remove active class from all tabs
+        tabButtons.forEach(btn => btn.classList.remove('active'));
+        menuSections.forEach(section => section.classList.remove('active'));
+
+        // Add active class to clicked tab
+        const clickedTab = e.target;
+        clickedTab.classList.add('active');
+
+        // Show corresponding menu section
+        const categoryId = clickedTab.getAttribute('data-category');
+        const activeSection = document.getElementById(categoryId);
+        if (activeSection) {
+            activeSection.classList.add('active');
+        }
     }
 
-    // Function to render menu items for a category
-    function renderMenuItems(category) {
-        const items = menuData[category] || [];
-        menuGrid.innerHTML = items.map(createMenuItem).join('');
-    }
-
-    // Event listeners for category tabs
-    categoryTabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-            // Update active tab
-            categoryTabs.forEach(t => t.classList.remove('active'));
-            tab.classList.add('active');
-
-            // Update current category and render items
-            currentCategory = tab.dataset.category;
-            renderMenuItems(currentCategory);
-        });
+    // Add click event listeners to all tab buttons
+    tabButtons.forEach(btn => {
+        btn.addEventListener('click', switchTab);
     });
 
-    // Initial render
-    renderMenuItems(currentCategory);
+    // Initialize with first tab active
+    tabButtons[0].click();
+
+    // Add animation for menu items
+    const menuItems = document.querySelectorAll('.menu-item');
+    
+    // Create intersection observer for animation
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, {
+        threshold: 0.1
+    });
+
+    // Observe all menu items
+    menuItems.forEach(item => {
+        item.style.opacity = '0';
+        item.style.transform = 'translateY(20px)';
+        item.style.transition = 'all 0.6s ease-out';
+        observer.observe(item);
+    });
 });
 
 // Add smooth scroll for navigation
@@ -229,4 +242,30 @@ function addFadeInAnimation() {
 }
 
 // Initialize animations
-document.addEventListener('DOMContentLoaded', addFadeInAnimation); 
+document.addEventListener('DOMContentLoaded', addFadeInAnimation);
+
+function createMenuItem(item) {
+    return `
+        <div class="menu-item">
+            <div class="menu-item-image">
+                <img src="${item.image}" alt="${item.title}">
+            </div>
+            <div class="menu-item-details">
+                <h3>${item.title}</h3>
+                <p>${item.description}</p>
+                <span class="price">₹${item.price}</span>
+            </div>
+        </div>
+    `;
+}
+
+function renderMenuItems(category) {
+    const menuSection = document.getElementById(category);
+    if (!menuSection) return;
+
+    const menuItemsContainer = menuSection.querySelector('.menu-items-grid');
+    if (!menuItemsContainer) return;
+
+    const items = menuData[category] || [];
+    menuItemsContainer.innerHTML = items.map(item => createMenuItem(item)).join('');
+} 

@@ -3,84 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu - Arabian Garden</title>
+    <title>Arabian Garden - Menu</title>
+    <!-- Add Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="digital-menu.css">
     <link rel="stylesheet" href="menu.css">
 </head>
 <body>
+    <!-- Header Section -->
     <header class="header">
-        <nav class="navbar">
-            <div class="logo">
-                <img src="img/shared image (2).jpeg" alt="Arabian Garden Logo">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid px-4">
+                <div class="new-logo">
+                    <a class="navbar-brand" href="index.html">
+                        <img src="img/shared image (2).jpeg" alt="Arabian Garden Logo">
+                    </a>
+                </div>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item px-3">
+                            <a class="nav-link" href="index.html">HOME</a>
+                        </li>
+                        <li class="nav-item px-3">
+                            <a class="nav-link" href="about.html">ABOUT US</a>
+                        </li>
+                        <li class="nav-item px-3">
+                            <a class="nav-link active" href="menu.html">MENU</a>
+                        </li>
+                        <li class="nav-item px-3">
+                            <a class="nav-link" href="gallery.html">GALLERY</a>
+                        </li>
+                        <li class="nav-item px-3">
+                            <a class="nav-link" href="contact.html">CONTACT</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <button class="mobile-menu-btn">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#menu">Menu</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <a href="#book" class="book-online">Book Online</a>
         </nav>
     </header>
 
-    <main class="menu-page">
-        <section class="menu-hero">
+    <!-- Digital Menu Section -->
+    <div class="digital-menu">
+        <div class="menu-hero">
             <div class="menu-hero-content">
-                <h1>Our Menu</h1>
-                <p>Experience the finest Arabian cuisine</p>
+                <h1>Our Culinary Delights</h1>
+                <p>Experience the finest Arabian and Continental cuisine</p>
             </div>
-        </section>
+        </div>
 
-        <section class="menu-categories">
-            <div class="category-tabs">
-                <button class="tab-btn active" data-category="breakfast">Breakfast</button>
-                <button class="tab-btn" data-category="main-course">Main Course</button>
-                <button class="tab-btn" data-category="desserts">Desserts</button>
-                <button class="tab-btn" data-category="beverages">Beverages</button>
-            </div>
-        </section>
-
-        <section class="menu-items" id="menu-container">
-            <div class="menu-section active" id="breakfast">
-                <h2 class="section-title">Breakfast</h2>
-                <div class="menu-grid">
-                    <!-- Menu items will be populated by JavaScript -->
-                </div>
+        <div class="menu-container">
+            <div class="menu-filters">
+                <button class="filter-btn active" data-filter="all">All Items</button>
+                <button class="filter-btn" data-filter="starters">Starters</button>
+                <button class="filter-btn" data-filter="main-course">Main Course</button>
+                <button class="filter-btn" data-filter="arabic">Arabic Specialties</button>
+                <button class="filter-btn" data-filter="beverages">Beverages</button>
             </div>
 
-            <div class="menu-section" id="main-course">
-                <h2 class="section-title">Main Course</h2>
-                <div class="menu-grid">
-                    <!-- Menu items will be populated by JavaScript -->
-                </div>
+            <div class="menu-grid" id="menuGrid">
+                <!-- Menu items will be dynamically inserted here -->
             </div>
-
-            <div class="menu-section" id="desserts">
-                <h2 class="section-title">Desserts</h2>
-                <div class="menu-grid">
-                    <!-- Menu items will be populated by JavaScript -->
-                </div>
-            </div>
-
-            <div class="menu-section" id="beverages">
-                <h2 class="section-title">Beverages</h2>
-                <div class="menu-grid">
-                    <!-- Menu items will be populated by JavaScript -->
-                </div>
-            </div>
-        </section>
-    </main>
+        </div>
+    </div>
 
     <script src="script.js"></script>
-    <script src="menu.js"></script>
+    <script src="digital-menu.js"></script>
+    <!-- Add Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html> 
