@@ -258,12 +258,26 @@ body {
         display: none;
     }
 
+    .hero {
+        height: 70vh; /* Reduced height for tablets */
+        padding-top: 80px;
+    }
+
     .hero-title {
         font-size: 42px;
     }
 
     .hero-subtitle {
         font-size: 20px;
+    }
+
+    .hero-buttons {
+        gap: 15px;
+    }
+
+    .see-more {
+        padding: 10px 25px;
+        font-size: 13px;
     }
 }
 
@@ -275,12 +289,30 @@ body {
         left: 10px;
     }
 
+    .hero {
+        height: 50vh; /* Even smaller height for mobile */
+        padding-top: 60px;
+        background-position: center 20%; /* Adjust background position for better focus */
+    }
+
     .hero-title {
-        font-size: 36px;
+        font-size: 32px;
+        margin-bottom: 15px;
     }
 
     .hero-subtitle {
-        font-size: 18px;
+        font-size: 16px;
+        margin-bottom: 30px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .see-more {
+        padding: 8px 20px;
+        font-size: 12px;
     }
 }
 
